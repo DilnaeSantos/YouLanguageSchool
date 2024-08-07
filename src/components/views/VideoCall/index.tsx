@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Stylebody } from './styles';
-import imgCaderno from '../../../assets/caderno.svg';
+import imgCaderno from '../../../assets/imgs/caderno.svg';
 import AulaA1 from '../../aulas/A1';
 
 const Call = () => {

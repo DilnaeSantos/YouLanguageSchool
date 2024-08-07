@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Stylebody } from './styles';
-import img1 from '../../../assets/imgs/A1FIG1.jpg'
-import img2 from '../../../assets/imgs/img2 aula2.png'
+import img1 from "../../../assets/imgs/imglesson1.jpg";
+import img2 from "../../../assets/imgs/imglesson2.png";
 
 // conteudo da lesson 1 modulo A1, Aula Impar
 import VocabularyImpar1 from './conteudo/Lesson 1/Vocabulary'

@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Stylebody = styled.body`
     font-size: 130%;
     color: #990000;
-    
 
     .Capa {
         display: flex;

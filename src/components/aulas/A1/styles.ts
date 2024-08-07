@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Stylebody = styled.body`
     background-color: #F6961D;
     max-height: 0px;
-    min-height: 610px;
+    min-height: 100vh;
     overflow-y: scroll;    
 
     .aula {

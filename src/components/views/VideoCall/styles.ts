@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 export const Stylebody = styled.body`
-    background-color: black;
-    height: 100%;
+    background-color: #773417;
+    width: 100%;
+    height: 100vh;
 
     .btnCaderno {
         background-color: black;
@@ -27,6 +28,7 @@ export const Stylebody = styled.body`
 
     .containerCallAlteredStyle {
         width: 100%;
+
         margin: 0% 0% 0% 50%;
     } 
 

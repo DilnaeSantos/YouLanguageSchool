@@ -33,7 +33,7 @@ export const Stylebody = styled.body`
         border: none;
     }
 
-    button {
+    .button {
         font-size: 200%;
         padding: 1%;
         border-radius: 0% 30%;

@@ -7,11 +7,11 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const handleAluno = () => {
-    navigate('/Cadastro');
+    navigate('/CadastroA');
   };
 
   const handleProfessor = () => {
-    navigate('/Cadastro!');
+    navigate('/CadastroP');
   };
 
   return (

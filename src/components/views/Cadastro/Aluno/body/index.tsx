@@ -1,7 +1,7 @@
 import React from 'react';
 import { Stylebody } from './styles';
 import imgLogo from '../../../../../assets/imgs/logo2.jpg';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Body: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const Body: React.FC = () => {
           <input type="email" placeholder="Email" autoComplete="email" required />
           <input type="number" placeholder="99 99999-9999" autoComplete='tel' required />
           <input type="password" placeholder="Senha" required />
-          <button>cadastrar</button>
+          <Link className='button' to={'/DashboardP'}>cadastrar</Link>
         </form>
       </section>
     </Stylebody>

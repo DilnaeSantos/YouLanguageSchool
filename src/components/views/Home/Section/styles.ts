@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Ellipse2 from "../../../../assets/elipse.jpg";
+import Ellipse2 from "../../../../assets/imgs/elipse.jpg";
 
 export const StyleSection1 = styled.section`
     height: 100vh;

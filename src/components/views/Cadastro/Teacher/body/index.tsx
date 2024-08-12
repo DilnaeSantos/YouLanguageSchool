@@ -1,6 +1,6 @@
 import React from 'react';
 import { Stylebody } from './styles';
-import imgLogo from '../../../../../assets/logo2.jpg';
+import imgLogo from '../../../../../assets/imgs/logo2.jpg';
 import { Link } from 'react-router-dom';
 
 const Body: React.FC = () => {

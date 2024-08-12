@@ -64,7 +64,7 @@ const Call = () => {
                     <iframe 
                         src={projectUrl} 
                         width="100%" 
-                        height="700vh" 
+                        height="598vh" 
                         style={{ border: 'none' }} 
                         allow="camera; microphone" 
                         allowFullScreen 

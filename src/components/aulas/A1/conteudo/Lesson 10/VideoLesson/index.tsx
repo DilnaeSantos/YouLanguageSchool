@@ -1,17 +1,22 @@
 //import react from 'react';
 import { Stylebody } from "./styles";
-import logo from '../../../../../../assets/logo2.jpg'
 
 const VideoLesson: React.FC = () => {
-    
-    return (
-        <>
-          <Stylebody>
-            <img className="logo" src={logo} alt="logo" />
-            <p>Video Lesson</p>
-          </Stylebody>
-        </>
-    );
+  const embedUrl = 'https://drive.google.com/file/d/1T496XyMyfg4srtJRmo2ZramynKvfRzCq/preview';
+
+  return (
+    <>
+      <Stylebody>
+        <iframe
+          src={embedUrl}
+          width="640"
+          height="480"
+          allow="autoplay"
+          frameBorder="0"
+        ></iframe>
+      </Stylebody>
+    </>
+  );
 }
 
 // eslint-disable-next-line react-refresh/only-export-components

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const StyleBody = styled.div`
 
+
 .header {
   display: flex;
   flex-direction: row;
@@ -31,7 +32,7 @@ export const StyleBody = styled.div`
   border-bottom: 2px solid #773417;
 }
 
-.btn {
+.btn1 {
   width: 180px;
   height: 60px;
   cursor: pointer;
@@ -46,7 +47,7 @@ export const StyleBody = styled.div`
   overflow: hidden;
 }
 
-.btn::before, .btn::after {
+.btn1::before, .btn1::after {
   content: '';
   position: absolute;
   top: 0;
@@ -57,14 +58,14 @@ export const StyleBody = styled.div`
   transition: transform 0.3s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.btn::before {
+.btn1::before {
   border: 2px solid #ffff;
   transform: scale(0);
   opacity: 0;
   z-index: 1;
 }
 
-.btn::after {
+.btn1::after {
   background: #773417;
   opacity: 0;
   clip-path: circle(0% at 50% 50%);
@@ -72,21 +73,21 @@ export const StyleBody = styled.div`
   z-index: 0;
 }
 
-.btn:hover::before, .btn.active::before {
+.btn1:hover::before, .btn1.active::before {
   transform: scale(1);
   opacity: 1;
 }
 
-.btn:hover::after, .btn.active::after {
+.btn1:hover::after, .btn1.active::after {
   clip-path: circle(150% at 50% 50%);
   opacity: 1;
 }
 
-.btn:hover, .btn.active {
+.btn1:hover, .btn1.active {
   color: #ffffff; /* Cor do texto no hover */
 }
 
-.btn span {
+.btn1 span {
   position: relative;
   z-index: 2;
 }

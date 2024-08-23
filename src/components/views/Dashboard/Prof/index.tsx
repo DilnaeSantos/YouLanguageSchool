@@ -5,7 +5,7 @@ import imgdoperfil from "../../../../assets/imgs/logoR1.png";
 import Calendario from "../../Calendario/calendario";
 
 const DashboardProf: React.FC = () => {
-    const [activeButton, setActiveButton] = useState<string | null>(null);
+    const [activeButton, setActiveButton] = useState<string>("Agenda");
 
     const handleClick = (buttonName: string) => {
         setActiveButton(buttonName);
@@ -25,7 +25,7 @@ const DashboardProf: React.FC = () => {
                     {["Agenda", "Minhas Aulas", "Mensagens", "Criar Sala De Aula", "Meus alunos", "Meu perfil", "Configurações"].map((btnText) => (
                         <button
                             key={btnText}
-                            className={`btn ${activeButton === btnText ? "active" : ""}`}
+                            className={`btn1 ${activeButton === btnText ? "active" : ""}`}
                             onClick={() => handleClick(btnText)}
                         >
                             <span>{btnText}</span>

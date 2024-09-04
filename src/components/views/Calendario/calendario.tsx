@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from "react";
 import { StyleBody } from "./styleCalendario";
 import moment from "moment";
@@ -7,15 +8,8 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "react-big-calendar/lib/addons/dragAndDrop/styles.css";
 import EventModal from "./eventModal";
 import eventosPadrao from "./eventos";
-import iconRight from '../../../assets/imgs/arrow-right-circle-fill.svg';
-import iconLeft from '../../../assets/imgs/arrow-left-circle-fill.svg';
-import icondown from '../../../assets/imgs/arrow-down-short.svg'
-import {
-    DropdownContainer,
-    DropdownButton,
-    DropdownContent,
-    DropdownItem,
-} from "./styleDropdown"; // Importa os estilos do dropdown
+import Adicionar from "./Adicionar";
+import CustomTollbar from "./CustomTollbar";
 
 const DragAndDropCalendar = withDragAndDrop(Calendar);
 const localizer = momentLocalizer(moment);
@@ -24,13 +18,13 @@ const Calendario: React.FC = () => {
     const [eventos, setEventos] = useState(eventosPadrao);
     const [eventoSelecionado, setEventoSelecionado] = useState(null);
 
-    const eventStyle = (event) => ({
+    const eventStyle = (event: any) => ({
         style: {
             backgroundColor: event.color,
         },
     });
 
-    const onEventToChange = (data) => {
+    const onEventToChange = (data: any) => {
         const { start, end } = data;
         const updatedEvents = eventos.map((event) => {
             if (event.id === data.event.id) {
@@ -41,7 +35,7 @@ const Calendario: React.FC = () => {
         setEventos(updatedEvents);
     };
 
-    const handleEventClick = (eventos) => {
+    const handleEventClick = (eventos: any) => {
         setEventoSelecionado(eventos);
     };
 
@@ -49,15 +43,19 @@ const Calendario: React.FC = () => {
         setEventoSelecionado(null);
     };
 
+    const handleAdicionar = (novoEvento: any) => {
+        setEventos([...eventos,{ ...novoEvento, id: eventos.length + 1 }])
+    }
+
     return (
         <StyleBody>
             <div className="toolbar">
-                <p>ferramentas</p>
+                <Adicionar onAdicionar={handleAdicionar} />
             </div>
             <div className="calendario">
                 <DragAndDropCalendar
                     defaultDate={new Date()}
-                    defaultView="day"
+                    defaultView="month"
                     events={eventos}
                     localizer={localizer}
                     resizable
@@ -76,46 +74,6 @@ const Calendario: React.FC = () => {
                 <EventModal evento={eventoSelecionado} onClose={handleEventClose} />
             )}
         </StyleBody>
-    );
-};
-
-const CustomTollbar = ({ onNavigate, label, onView, views }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [itemText, setItemText] = useState("day");
-
-    const handleToggle = () => {
-        setIsOpen(!isOpen);
-    };
-
-    const handleSelectView = (view) => {
-        onView(view);
-        setItemText(view);
-        setIsOpen(false);
-    };
-
-    return (
-        <div className="toolbar-container">
-            <h1 className="mesAno">{label}</h1>
-            <div className="dirtopo">
-                <div>
-                    <DropdownContainer>
-                        <DropdownButton onClick={handleToggle}>{itemText}<img className="setaDown" src={icondown} alt="" /></DropdownButton>
-                        <DropdownContent isOpen={isOpen}>
-                            {views.map((view, index) => (
-                                <DropdownItem key={index} onClick={() => handleSelectView(view)}>
-                                    {view}
-                                </DropdownItem>
-                            ))}
-                        </DropdownContent>
-                    </DropdownContainer>
-                </div>
-                <div className="toolbar-navigation">
-                    <button className="btnHoje" onClick={() => onNavigate("TODAY")}>Today</button>
-                    <button className="btnAnterior" onClick={() => onNavigate("PREV")}><img className="setaLeft" src={iconLeft} alt="" /></button>
-                    <button className="btnProximo" onClick={() => onNavigate("NEXT")}><img className="setaRight" src={iconRight} alt="" /></button>
-                </div>
-            </div>
-        </div>
     );
 };
 
